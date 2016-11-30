@@ -5,6 +5,13 @@
 	<title>案例 - 音视频</title>
 
 	<meta charset="UTF-8">
+	
+	<style>
+		video::cue {background-image: linear-gradient(to bottom, dimgray, lightgray);color: papayawhip;}
+		video::cue(i) {color: red;}
+		video::cue(v[voice="Esme"]) { color: cyan }
+		video::cue(v[voice="Mary"]) { color: lime }			
+	</style>
 
 	</head>
 
