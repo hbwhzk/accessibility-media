@@ -2,11 +2,16 @@
 Kind: captions
 Language: en
 
+STYLE
+::cue(b) {
+  color: peachpuff;
+}
+
 00:00:00.400 --> 00:00:02.202
-<u>Female Speaker</u>: The Obama's are staying in D.C. for two
+<u>Female Speaker</u>: <b>The Obama's are staying in D.C. for two
 
 00:00:02.202 --> 00:00:04.270
-years after the President leaves office.
+years after the President leaves office.</b>
 
 00:00:04.270 --> 00:00:06.805
 Chuck Todd: He's about to go from Commander in Chief
