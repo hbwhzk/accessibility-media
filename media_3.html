@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="Zh_cn">
+  <head>
+    <meta charset="UTF-8">
+    <title>情景字幕和交互式字幕的音视频文件</title>
+    <style type="text/css">
+      div#transcriptText {
+	    float:right;
+        cursor: pointer;
+        height:400px;
+		width:450px;
+        overflow-y:scroll;
+        padding:5px;
+        background-color:#FAF9F8;
+        border:2px black solid;
+      }
+      .current {
+         background-color: yellow;
+      }
+      #videoBox {
+         float:left;
+         width: 800px;
+		 height:550px;
+      }
+ #videoBox video{
+         width: 100%;
+		 height:100%;
+      }
+      #transcriptBox {
+         width:450px;
+		 height:500px;
+         float:right;
+      }
+      #speaking {
+         display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>包含有情景字幕和交互式字幕的音视频文件</h1>
+
+      <div id="videoBox">
+        <video poster="mp4/Couch_Commander.jpg" controls>
+          <source src="mp4/Couch_Commander.mp4"  type="video/mp4">
+		  <track label="English" src="tracks/Couch_Commander_2.vtt" kind="subtitles" srclang="en" default>
+        </video>
+      </div>
+      <div id="speaking" aria-live="rude">
+      </div>
+      <div id="transcriptBox">
+        <h4>交互式字幕</h4>
+        <p style="font:small;">点击任意文本，控制播放时间点</p>
+        <div id="transcriptText">
+          <p id="c1" class="cue" data-time="0.0" aria-live="rude" tabindex="1">
+            女主持人：奥巴马卸任总统 他和家人将继续</br>
+            Female Speaker: The Obama's are staying in D.C. for two
+          </p>
+          <p id="c2" class="cue" data-time="2.202" aria-live="rude" tabindex="1">
+            住在华盛顿特区二年</br>
+            years after the President leaves office.
+          </p>
+          <p id="c3" class="cue" data-time="4.270" aria-live="rude" tabindex="1">
+            Chuck Todd：奥巴马既将从三军统帅</br>
+            Chuck Todd: He's about to go from Commander in Chief
+          </p>
+          <p id="c4" class="cue" data-time="6.806" tabindex="1">
+            变成沙发统帅</br>
+            to Couch Commander.
+          </p>
+          <p id="c5" class="cue" data-time="8.408" tabindex="1">
+          总统： - 去你的，查克托德。</br>
+          The President: -- you, Chuck Todd.
+          </p>
+          <p id="c6" class="cue" data-time="10.510" aria-live="rude" tabindex="1">
+            但我这二年在华盛顿特区要干嘛？</br>
+            What am I going to do in D.C. for two years?
+          </p>
+          <p id="c7" class="cue" data-time="14.047" aria-live="rude" tabindex="1">
+            （音乐）</br>
+            (music)
+          </p>
+          <p id="c8" class="cue" data-time="16.416" aria-live="rude" tabindex="1">
+            副总统：就去伦敦访问吧，</br>
+            The Vice President: Get around to London,
+          </p>
+          <p id="c9" class="cue" data-time="17.217">
+          总统先生。</br>
+          Mr. President.
+          </p>
+          <p id="c10" class="cue" data-time="18.852" aria-live="rude" tabindex="1">
+            总统：我总不可能每天飞伦敦，对吧？</br>
+            The President: I can't go every day, can I?
+          </p>
+          <p id="c11" class="cue" data-time="20.487" tabindex="1">
+            副总统：你比较喜欢哪一副？</br>
+            The Vice President: Which do you like better?
+          </p>
+          <p id="c12" class="cue" data-time="21.287" tabindex="1">
+          这一副？</br>
+          These?
+          </p>
+          <p id="c13" class="cue" data-time="23.156" tabindex="1">
+            还是这一副？</br>
+            Or These?
+          </p>
+          <p id="c14" class="cue" data-time="25.258" tabindex="1">
+            总统：乔，这两副根本一模一样。</br>
+            The President: Joe, they're the same.
+          </p>
+          <p id="c15" class="cue" data-time="26.493" tabindex="1">
+           副总统：这两副呈现不同的心情啊。</br>
+           The Vice President: They capture different moods.
+          </p>
+          <p id="c16" class="cue" data-time="28.862" aria-live="rude" tabindex="1">
+            总统：乔，可以专心在正事上吗？</br>
+            The President: Joe, I need some focus here.
+          </p>
+          <p id="c17" class="cue" data-time="30.130">
+            副总统：你选在我保养墨镜时来烦我</br>
+            The Vice President: Coming in here during aviator time,
+
+          </p>
+          <p id="c18" class="cue" data-time="31.731" aria-live="rude" tabindex="1">
+            还觉得自己的事最…</br>
+            thinks everything --
+          </p>
+          <p id="c19" class="cue" data-time="32.531">
+            总统：不好意思 你在碎念啥？</br>
+The President: I'm sorry, what's that?
+          </p>
+          <p id="c20" class="cue" data-time="33.466" aria-live="rude" tabindex="1">
+            副总统：我是说 总统先生 </br>
+The Vice President: I said, Mr. President,
+          </p>
+          <p id="c21" class="cue" data-time="34.601">
+           你要实际一点</br>
+you got to be practical.
+          </p>
+          <p id="c22" class="cue" data-time="35.902" aria-live="rude" tabindex="1">
+           你卸任后就可以开车了。</br>
+And look, you can drive again,
+
+          </p>
+          <p id="c23" class="cue" data-time="37.303" aria-live="rude" tabindex="1">
+            你需要驾照</br>
+you're going to need a license.
+          </p>
+          <p id="c24" class="cue" data-time="39.072" tabindex="1">
+            你是运动迷，你可以向华盛顿特区的球队毛遂自荐啊？</br>
+You love sports, why don't you volunteer to work one of
+          </p>
+          <p id="c25" class="cue" data-time="41.307" tabindex="1">
+            the teams around here?
+          </p>
+          <p id="c26" class="cue" data-time="42.275" tabindex="1">
+            （音乐）</br>
+(music)
+          </p>
+          <p id="c27" class="cue" data-time="43.176" aria-live="rude" tabindex="1">
+            总统：这是华盛顿奇才队吗？</br>
+The President: Is this the Washington Wizards?
+          </p>
+          <p id="c28" class="cue" data-time="44.411" tabindex="1">
+            我听说你们需要个教练</br>
+I understand you're looking for some coaching help.
+          </p>
+          <p id="c29" class="cue" data-time="46.613" aria-live="rude" tabindex="1">
+            我跟你讲 我以前指导过几次我闺女的球队</br>
+Let's just say I coached my daughter's team a few times.
+
+          </p>
+          <p id="c30" class="cue" data-time="49.215" tabindex="1">
+        喂？</br>
+Hello?
+          </p>
+          <p id="c31" class="cue" data-time="50.350" aria-live="rude" tabindex="1">
+            喂？</br>
+Hello?
+          </p>
+          <p id="c32" class="cue" data-time="52.252" aria-live="rude" tabindex="1">
+            （音乐）</br>
+(music)
+          </p>
+          <p id="c33" class="cue" data-time="58.558" tabindex="1">
+            女演员：44。</br>
+Female Speaker: 44.
+          </p>
+          <p id="c34" class="cue" data-time="60.527" tabindex="1">
+            总统：终于轮到我了</br>
+The President: Finally.
+          </p>
+          <p id="c35" class="cue" data-time="61.728" tabindex="1">
+            我会在华盛顿待一段时间 </br>
+So, I'm going to be in D.C. for awhile,
+          </p>
+          <p id="c36" class="cue" data-time="63.229" tabindex="1">
+            我觉得我得重新开始开车</br>
+and I thought I'd take up driving again.
+
+          </p>
+          <p id="c37" class="cue" data-time="65.165" aria-live="rude" tabindex="1">
+           女演员：你叫什么名字？</br>
+Female Speaker: What's the name?
+          </p>
+          <p id="c38" class="cue" data-time="66.032" tabindex="1">
+            总统：巴拉克·侯赛因·奥巴马。</br>
+The President: Barack Hussein Obama.
+          </p>
+          <p id="c39" class="cue" data-time="68.334" tabindex="1">
+            女演员：天啦</br>
+Female Speaker: Yikes.
+          </p>
+          <p id="c40" class="cue" data-time="70.804" tabindex="1">
+          好吧 鉴于你没有驾照</br>
+Well, since you don't have a driver's license,
+          </p>
+          <p id="c41" class="cue" data-time="72.772" tabindex="1">
+            你必须出示出生证明</br>
+you're going to need a birth certificate.
+
+          </p>
+          <p id="c42" class="cue" data-time="74.674" tabindex="1">
+            总统：是吗？</br>
+The President: Really?
+
+          </p>
+          <p id="c43" class="cue" data-time="75.708" aria-live="rude" tabindex="1">
+            女演员：没错</br>
+Female Speaker: Really.
+
+          </p>
+          <p id="c44" class="cue" data-time="79.879" tabindex="1">
+            总统：这是真的。</br>
+The President: It's real.
+          </p>
+          <p id="c45" class="cue" data-time="80.747" tabindex="1">
+            女演员：是吗？</br>
+Female Speaker: Is it?
+          </p>
+          <p id="c46" class="cue" data-time="82.182" tabindex="1">
+            总统：真的是真的。</br>
+The President: It's real.
+
+          </p>
+          <p id="c47" class="cue" data-time="83.383" tabindex="1">
+            女演员：是么？</br>
+Female Speaker: But is it?
+
+          </p>
+          <p id="c48" class="cue" data-time="84.951" tabindex="1">
+           （音乐）</br>
+(music)
+          </p>
+          <p id="c49" class="cue" data-time="86.352" tabindex="1">
+            总统：哦。</br>
+The President: Oh.
+
+          </p>
+          <p id="c50" class="cue" data-time="86.920" tabindex="1">
+           米歇尔忘带了她的手机。</br>
+Michelle left her phone.
+
+          </p>
+          <p id="c51" class="cue" data-time="88.588" aria-live="rude" tabindex="1">
+            来我们看看。</br>
+Let's see here.
+          </p>
+          <p id="c52" class="cue" data-time="89.756" tabindex="1">
+            哈。</br>
+Huh.
+
+          </p>
+          <p id="c53" class="cue" data-time="91.057" aria-live="rude" tabindex="1">
+            她居然还有Snapchat。</br>
+She's got Snapchat.
+          </p>
+          <p id="c54" class="cue" data-time="92.559" tabindex="1">
+            奥巴马超赞！</br>
+Obamacare is great!
+
+          </p>
+          <p id="c55" class="cue" data-time="94.527" tabindex="1">
+            而且真有用！</br>
+And it's really working!
+          </p>
+          <p id="c56" class="cue" data-time="96.196" tabindex="1">
+            现在就加入！</br>
+Sign up now!
+          </p>
+          <p id="c57" class="cue" data-time="97.630" tabindex="1">
+            男主讲人：最新新闻。</br>
+Male Speaker: Breaking news.
+          </p>
+          <p id="c58" class="cue" data-time="99.098" tabindex="1">
+            Wolf Blitzer：米歇尔 奥巴马</br>
+Wolf Blitzer: Michelle Obama in hot water,
+          </p>
+          <p id="c59" class="cue" data-time="100.967" tabindex="1">
+            因为发布此视频深陷风波</br>
+after posting this video earlier today.
+          </p>
+          <p id="c60" class="cue" data-time="104.304" aria-live="rude" tabindex="1">
+            总统：奥巴马超赞！</br>
+The President: Obamacare is great!
+          </p>
+          <p id="c61" class="cue" data-time="106.239" tabindex="1">
+            而且真有用！</br>
+And it's really working!
+          </p>
+          <p id="c62" class="cue" data-time="107.974" tabindex="1">
+            现在就加入！</br>
+Sign up now!
+          </p>
+          <p id="c63" class="cue" data-time="115.248" aria-live="rude" tabindex="1">
+            不好吗？</br>
+No?
+          </p>
+          <p id="c64" class="cue" data-time="116.349" tabindex="1">
+            奥巴马夫人：不。</br>
+Mrs. Obama: No.
+
+
+          </p>
+          <p id="c65" class="cue" data-time="117.217" tabindex="1">
+           总统：起码收率数更高啊</br>
+The President: Did it get a lot of views, at least?
+
+          </p>
+          <p id="c66" class="cue" data-time="118.151" tabindex="1">
+           奥巴马太太：亲爱的，够了。</br>
+Mrs. Obama: Honey, enough.
+
+          </p>
+          <p id="c67" class="cue" data-time="119.252" aria-live="rude" tabindex="1">
+            够了。</br>
+Enough.
+
+          </p>
+          <p id="c68" class="cue" data-time="119.752" tabindex="1">
+           为什么你不能去找找那些早已退休的老司机聊聊呢</br>
+Why don't you just talk to somebody who has been
+          </p>
+          <p id="c69" class="cue" data-time="121.187" aria-live="rude" tabindex="1">
+            through this.
+          </p>
+          <p id="c70" class="cue" data-time="122.755" tabindex="1">
+            我现在去骑动感单车了</br>
+I got to go to SoulCycle.
+          </p>
+          <p id="c71" class="cue" data-time="127.260" tabindex="1">
+            总统：她是对的。</br>
+The President: She's right.
+
+          </p>
+          <p id="c72" class="cue" data-time="129.662" aria-live="rude" tabindex="1">
+            我知道我该找谁了</br>
+I know who I need to talk to.
+
+
+          </p>
+          <p id="c73" class="cue" data-time="132.065" tabindex="1">
+            嗨。</br>
+Hey.
+          </p>
+          <p id="c74" class="cue" data-time="134.100" tabindex="1">
+            我是巴拉克。</br>
+It's Barack.
+
+          </p>
+          <p id="c75" class="cue" data-time="135.535" aria-live="rude" tabindex="1">
+            听着，我们一起聚聚下。</br>
+Listen, could we get together.
+          </p>
+          <p id="c76" class="cue" data-time="136.836" tabindex="1">
+            （音乐）</br>
+(music)
+
+          </p>
+          <p id="c77" class="cue" data-time="139.439" tabindex="1">
+            这真是一部好片。</br>
+Now that is a great movie.
+
+          </p>
+          <p id="c78" class="cue" data-time="141.975" tabindex="1">
+            约翰·博纳：是的。</br>
+John Boehner: Yeah.
+
+          </p>
+          <p id="c79" class="cue" data-time="142.642" aria-live="rude" tabindex="1">
+            每次看着很感动</br>
+It gets me every time.
+          </p>
+          <p id="c80" class="cue" data-time="146.546" tabindex="1">
+           汤姆·汉克斯：再见了，小伙伴。</br>
+Tom Hanks: So long, partner.
+
+          </p>
+          <p id="c81" class="cue" data-time="148.748" aria-live="rude" tabindex="1">
+            （音乐）</br>
+(music)
+
+          </p>
+          <p id="c82" class="cue" data-time="151.851" aria-live="rude" tabindex="1">
+           总统：所以，有什么建议给我不？</br>
+The President: So, you got any advice for me?
+          </p>
+          <p id="c83" class="cue" data-time="153.853" aria-live="rude" tabindex="1">
+            John Boehner：你现在想起来听我的建议了啊？</br>
+John Boehner: So now you want my advice?
+
+          </p>
+          <p id="c84" class="cue" data-time="155.488" aria-live="rude" tabindex="1">
+            首先，不要再给我领英邀请了好不好</br>
+First, stop sending me all these LinkedIn requests.
+
+          </p>
+          <p id="c85" class="cue" data-time="158.391" aria-live="rude" tabindex="1">
+            然后，这事儿的妙处在于</br>
+And second, here's the beauty of this whole thing.
+          </p>
+          <p id="c86" class="cue" data-time="160.927" aria-live="rude" tabindex="1">
+            你现在有大把时间想清楚了</br>
+You've got all the time in the world to figure this out.
+          </p>
+          <p id="c87" class="cue" data-time="163.596" aria-live="rude" tabindex="1">
+            你可以做一会儿你自己了</br>
+You can just be you for awhile.
+          </p>
+<p id="c88" class="cue" data-time="165.598" aria-live="rude" tabindex="1">
+            如果你知道你是啥样</br>
+If you know how to do that again.
+
+
+          </p><p id="c89" class="cue" data-time="167.333" aria-live="rude" tabindex="1">
+            总统：所以我可以做我自己了</br>
+The President: So I can just be me.
+          </p><p id="c90" class="cue" data-time="169.235" aria-live="rude" tabindex="1">
+            （音乐）</br>
+(music)
+          </p><p id="c91" class="cue" data-time="171.504" aria-live="rude" tabindex="1">
+            我现在可以安心穿上我的妈妈裤了</br>
+And I can wear my mom jeans in peace.
+          </p><p id="c92" class="cue" data-time="173.306" aria-live="rude" tabindex="1">
+             我不喜欢这条牛仔裤</br>
+I hate these tight jeans.
+          </p><p id="c93" class="cue" data-time="174.507" aria-live="rude" tabindex="1">
+            约翰·博纳：很好 </br>
+John Boehner: That's good.
+          </p><p id="c94" class="cue" data-time="175.375" aria-live="rude" tabindex="1">
+           很好</br>
+That's good.
+
+          </p><p id="c95" class="cue" data-time="179.078" aria-live="rude" tabindex="1">
+             昨天我中午11:30就喝了瓶啤酒。</br>
+Yesterday, I had a beer at 11:30 in the morning.
+
+          </p><p id="c96" class="cue" data-time="181.981" aria-live="rude" tabindex="1">
+             现在麦当劳全天都卖了早餐</br>
+And you know, McDonalds now serves breakfast all day long.
+          </p><p id="c97" class="cue" data-time="185.852" aria-live="rude" tabindex="1">
+           总统：米歇尔现在在上单车课</br>
+The President: And Michelle's going to be at
+
+          </p><p id="c98" class="cue" data-time="186.819" aria-live="rude" tabindex="1">
+            所以她不会发现的</br>
+spin class, so she'll never know.
+          </p><p id="c100" class="cue" data-time="188.655" aria-live="rude" tabindex="1">
+             约翰·博纳：对。</br>
+John Boehner: Right.
+          </p>
+		  <p id="c101" class="cue" data-time="189.389" aria-live="rude" tabindex="1">
+            看开一点</br>
+Let it go.
+
+          </p>
+<p id="c102" class="cue" data-time="190.256" aria-live="rude" tabindex="1">
+            时间不会久，你很快就能走出</br>
+And it won't be long, you'll be able to walk right out of
+
+
+          </p>
+		  <p id="c103" class="cue" data-time="192.492" aria-live="rude" tabindex="1">
+            白宫总统办公室了 一边唱着蚂蚁呀嘿</br>
+the Oval Office singing Zip-a-Dee-Doo-Dah
+
+
+          </p>
+		  <p id="c104" class="cue" data-time="195.295" aria-live="rude" tabindex="1">
+            蚂蚁呀嘿</br>
+Zip-a-Dee-Day.
+
+
+          </p>
+		  <p id="c105" class="cue" data-time="196.262" aria-live="rude" tabindex="1">
+            （语言）</br>
+(laughter)
+
+
+          </p>
+		  <p id="c106" class="cue" data-time="197.830" aria-live="rude" tabindex="1">
+            然后你还有大把时间去沐浴阳光 晒出美黑</br>
+And you've got plenty of time to work on your tan.
+
+          </p>
+		  <p id="c107" class="cue" data-time="201.868" aria-live="rude" tabindex="1">
+            你知道吗？</br>
+And you know what?
+
+
+          </p>
+		  <p id="c108" class="cue" data-time="202.969" aria-live="rude" tabindex="1">
+            我终于谈成了一笔大交易  买到了一台雪佛兰太浩车</br>
+I finally got the grand bargain on a sweet Chevy Tahoe.
+
+          </p>
+		  <p id="c109" class="cue" data-time="211.077" aria-live="rude" tabindex="1">
+            看这个</br>
+Look here.
+
+          </p>
+<p id="c110" class="cue" data-time="213.846" aria-live="rude" tabindex="1">
+            看</br>
+Look here.
+
+
+          </p>
+		  <p id="c111" class="cue" data-time="213.881" aria-live="rude" tabindex="1">
+            想要吗？</br>
+You want one?
+
+
+          </p>
+		  <p id="c112" class="cue" data-time="219.919" aria-live="rude" tabindex="1">
+            Wolf Blitzer：最新新闻。</br>
+Wolf Blitzer: Breaking news.
+
+          </p>
+		  <p id="c113" class="cue" data-time="220.520" aria-live="rude" tabindex="1">
+            前总统巴拉克·奥巴马今年打了第347轮</br>
+Former President Barack Obama on his 347th round of
+          </p>
+ <p id="c114" class="cue" data-time="224.891" aria-live="rude" tabindex="1">
+           高尔夫球，这是很棒的事情。</br>
+golf for the year, and it's totally great.
+          </p>
+		   <p id="c115" class="cue" data-time="228.695" aria-live="rude" tabindex="1">
+           格洛丽亚，这回没有什么问题</br>
+And Gloria, not a problem for anybody.
+
+          </p>
+		   <p id="c116" class="cue" data-time="231.130" aria-live="rude" tabindex="1">
+            格洛丽亚·博格：我想不到让我想在乎的理由，沃夫</br>
+Gloria Borger: I can't think of a reason to care, Wolf.
+
+          </p>
+		   <p id="c117" class="cue" data-time="233.566" aria-live="rude" tabindex="1">
+           相信我，我想了很久。</br>
+And believe me, I've tried.
+
+          </p>
+		   <p id="c118" class="cue" data-time="235.935" aria-live="rude" tabindex="1">
+            （音乐）</br>
+(music)
+          </p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <script type="text/javascript">
+      window.onload = function() {
+        // get video element
+        var video = document.getElementsByTagName("video")[0];
+        var transcript = document.getElementById("transcriptBox");
+        var trans_text = document.getElementById("transcriptText");
+        var speaking = document.getElementById("speaking");
+        var current = -1;
+        
+        // register events for the clicks on the text
+        var cues = document.getElementsByClassName("cue");
+        for (var i=0; i<cues.length; i++) {
+          cues[i].addEventListener("click", function(evt) {
+            var start = parseFloat(this.getAttribute("data-time"));
+            video.currentTime = start;
+            video.play();
+          }, false);
+        }
+        
+        // pause video as you mouse over transcript
+        transcript.addEventListener("mouseover", function(evt) {
+          video.pause();
+        }, false);
+        
+        // scroll to text as video time changes
+        video.addEventListener("timeupdate", function(evt) {
+          if (video.paused || video.ended) {
+            return;
+          }
+          // scroll to currently playing time offset
+          for (var i=0; i<cues.length; i++) {
+            var cueTime = cues[i].getAttribute("data-time");
+            if (cues[i].className.indexOf("current") == -1 &&
+                video.currentTime >= parseFloat(cueTime) &&
+                video.currentTime < parseFloat(cueTime)) {
+              trans_text.scrollTop = 
+                cues[i].offsetTop - trans_text.offsetTop;
+              if (current >= 0) {
+                  cues[current].classList.remove("current");
+              }
+              cues[i].className += " current";
+              current = i;
+              if (cues[i].getAttribute("aria-live") == "rude") {
+                speaking.innerHTML = cues[i].innerHTML;
+              }
+            }
+          }
+        }, false);
+      };
+    </script>
+  </body>
+</html>
